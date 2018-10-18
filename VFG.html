@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="gamestyle.css">
+	<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+	<title>Very fun game</title>
+</head>
+<body>
+<h1>The Adventure Begins</h1>
+<div id="mainDiv">
+	<fieldset>
+		<legend>Story</legend>
+			<div id="mainDiv">
+				<div id="introscreen"><p>This is your adventure through the lands <br> of dicksberg	</p>
+				<button onclick="start()">Press to start</button></div>
+			</div>
+			<div id="story1">
+				<p id="title"></p>
+				<ul>
+					<li onclick="select(1)" class="options" id="a"></li>
+					<li onclick="select(2)" class="options" id="b"></li>
+					<li onclick="select(3)" class="options" id="c"></li>
+					<li onclick="select(4)" class="options" id="d"></li>
+				</ul>
+				<p id="ans"></p>
+			</div>
+
+			<h2 id="ded">You're dead bitch</h2>
+			<button onclick="restart()">Try again</button>
+			<button id="next">Continue</button>
+		</fieldset>
+
+</div>
+<script>
+var tale1 = {ST1:"After walking for a while it turns to night, <br> how will you keep warm", SCa:"Climb in a tree and hope the night is warm", SCb:"Put on all your clothes", SCc:"Cover yourself in dirt and leaves", SCd:"Make a fire"};
+var tale2 = {ST2:"An old lady collpases in front of you", SCa:"Give her food", SCb:"Give her water", SCc:"Laugh and move on", SCd:"Loot body"};
+
+function start() {
+		var intro = document.getElementById("introscreen");
+		var first = document.getElementById("story1");
+		introscreen.style.display = "none"
+		story1.style.display = "block"
+
+		document.getElementById("title").innerHTML = tale1.ST1
+		document.getElementById("a").innerHTML = tale1.SCa
+		document.getElementById("b").innerHTML = tale1.SCb
+		document.getElementById("c").innerHTML = tale1.SCc
+		document.getElementById("d").innerHTML = tale1.SCd
+		}
+function select(option){
+	var bod = document.getElementById("mainDiv");
+	var	def = document.getElementById("ded");
+	var nex = document.getElementById("next");
+	switch(option) {
+		case 1:
+			document.getElementById("ans").innerHTML = "Your luck betrays you and you freeze to death durin your first night"
+			def.style.display = "block";
+			break;
+		case 2:
+			document.getElementById("ans").innerHTML = "Due to your limited mobility, you fall from the tree and break your neck"
+			def.style.display = "block";
+			break;
+		case 3:
+			document.getElementById("ans").innerHTML = "You imitate other creatures and survive the night"
+			nex.style.display = "block"
+			break;
+		case 4:
+			document.getElementById("ans").innerHTML = "The fire might keep you warm, but bandits find you in your slumber. You find yourself without a throat."
+			def.style.display = "block";
+			break;
+	}
+function restart() {
+	window.location.reload(true);
+}
+}
+
+
+</script>
+</body>
+</html>
