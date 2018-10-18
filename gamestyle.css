@@ -1,0 +1,28 @@
+body {
+	font-family: 'Press Start 2P', cursive;
+	background-color: black;
+	color: white;
+}
+
+#mainDiv {
+	display: flex;
+	flex-direction: row;
+}
+#introscreen {
+	display: block;
+}
+#next {
+	display: none;
+}
+#ded {
+	display: none;
+}
+#story1{
+	display: none;
+}
+.options{
+	margin: 3px;
+}
+.options:hover {
+	border: 1px solid white;
+}
