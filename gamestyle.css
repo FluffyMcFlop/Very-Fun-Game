@@ -17,7 +17,10 @@ body {
 #ded {
 	display: none;
 }
-#story1{
+#retry {
+	display: none;
+}
+#story{
 	display: none;
 }
 .options{
@@ -25,4 +28,7 @@ body {
 }
 .options:hover {
 	border: 1px solid white;
+}
+#grills {
+	display: none;
 }
